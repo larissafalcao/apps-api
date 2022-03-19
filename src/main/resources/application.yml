@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:15432/rogalabs-api-db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    continue-on-error: true
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  jpa:
+      show-sql: true

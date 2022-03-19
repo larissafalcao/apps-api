@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  postgres-rogalabs:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "rogalabs-api-db"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - "15432:5432"
