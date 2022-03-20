@@ -22,7 +22,7 @@ mvn spring-boot:run
 
 After the application started access the url:
 ```sh
-http://localhost:8080/swagger-ui.html
+http://localhost:8080/swagger-ui/index.html#
 ```
 You should see the swagger documentation
 
