@@ -58,10 +58,10 @@ public class AppControllerTest {
                         .content(objectMapper.writeValueAsString(app)))
                 .andDo(print())
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id").value(5))
                 .andExpect(jsonPath("$.name").value(app.getName()))
                 .andExpect(jsonPath("$.owner").value(app.getOwner()))
-                .andExpect(jsonPath("$.price").value(app.getPrice()));
+                .andExpect(jsonPath("$.price").value(app.getPrice()))
+                .andExpect(jsonPath("$.type").value(app.getType()));
     }
 
     @Test
@@ -79,7 +79,7 @@ public class AppControllerTest {
     @Test
     public void shouldGetOneApp() throws Exception {
 
-        this.mockMvc.perform(get("/api/app/1"))
+        this.mockMvc.perform(get("/api/app/5"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(5))
                 .andExpect(jsonPath("$.name").value("Instagram"))
@@ -99,7 +99,7 @@ public class AppControllerTest {
     @Test
     public void updateSuccess() throws Exception {
 
-        this.mockMvc.perform(put( "/api/app/1")
+        this.mockMvc.perform(put( "/api/app/5")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(app)))
                 .andExpect(status().isOk())
